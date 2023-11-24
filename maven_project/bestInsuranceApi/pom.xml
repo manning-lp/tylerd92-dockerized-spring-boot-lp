@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bestinsurance</groupId>
-	<artifactId>best-insurance-api</artifactId>
+	<artifactId>best_insurance-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bestInsuranceApi</name>
 	<description>BestInsurance</description>
