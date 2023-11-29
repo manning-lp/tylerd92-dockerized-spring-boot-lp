@@ -1,39 +1,26 @@
 services:
-  backend:
-    image: best_insurance-api
+  app:
+    image: best_insurance-api:0.0.1-SNAPSHOT
     ports:
       - 8080:8080
+    env_file: ../.env
     environment:
-      - POSTGRES_DB=bestinsurance
+      -  POSTGRES_DB
     networks:
       - spring-postgres
-  database:
+  db:
     image: postgres
-    ports:
-      - '5432'
+    restart: always
+    env_file: ../.env
     environment:
-      - 'POSTGRES_USER=myuser'
-      - 'POSTGRES_DB=bestinsurance'
-      - 'POSTGRES_PASSWORD=secret'
+      - POSTGRES_USER
+      - POSTGRES_DB
+      - POSTGRES_PASSWORD
+    expose:
+      - 5432
     networks:
       - spring-postgres
-#  db:
-#    image: postgres
-#    restart: always
-#    secrets:
-#      - db-password
-#    volumes:
-#      - db-data:/var/lib/postgresql/data
-#    networks:
-#      - spring-postgres
-#    environment:
-#      - POSTGRES_DB=bestinsurance
-#      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-#    expose:
-#      - 5432
-#volumes:
-#  db-data:
-#secrets:
-#  db-password:
-#    file: ../db/password.txt
+
+networks:
+  spring-postgres:
 
