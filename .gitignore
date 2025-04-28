@@ -37,6 +37,6 @@ out/
 .vscode/
 
 .DS_Store
-.env
+maven_project/bestInsuranceApi/docker/.env
 application.properties
 *.properties
