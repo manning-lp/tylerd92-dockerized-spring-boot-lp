@@ -1,6 +1,7 @@
 services:
   app:
-    image: 'docker.io/best_insurance/api:latest'
+    build: .
+    image: best_insurance/api:latest
     container_name: app
     depends_on:
       db:
