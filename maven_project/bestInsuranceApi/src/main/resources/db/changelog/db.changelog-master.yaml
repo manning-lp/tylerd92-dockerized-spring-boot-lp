@@ -1,5 +1,5 @@
 databaseChangeLog:
-  - changeSet:
-      id:  1
-      author:  bestDev
-      changes:
+  - id: 1
+  - author: tyler
+  - include:
+      file: db/changelog/001-ddl-definition.sql
